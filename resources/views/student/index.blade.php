@@ -15,7 +15,7 @@
     </div>
 
     <div class="table-responsive">
-      <table class='table'>
+      <table class='table table-striped table-bordered table-hover'>
         <thead>
           <tr>
             <th scope='col'>No</th>
