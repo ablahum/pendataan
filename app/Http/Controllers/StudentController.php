@@ -12,4 +12,21 @@ class StudentController extends Controller
         
         return view('student.index', compact('students'));
     }
+
+    public function create() {
+        return view('student.create');
+    }
+
+    public function store(Request $request) {
+        Student::create([
+            'nim' => $request->nim,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'gender' => $request->gender,
+            'birth_date' => $request->birth_date,
+        ]);
+        
+        return redirect()->route('student.index');
+    }
 }

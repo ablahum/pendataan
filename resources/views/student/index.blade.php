@@ -9,7 +9,7 @@
         </div>
 
         <div>
-          <a href="#" class="btn btn-success">Tambah Mahasiswa</a>
+          <a href="{{ route('student.create') }}" class="btn btn-success">Tambah Mahasiswa</a>
         </div>
       </div>
     </div>
