@@ -42,9 +42,6 @@
                   <label class="form-check-label" for="female">Female</label>
                 </div>
               </div>
-
-                {{-- <label for="gender" class="form-label">Gender</label> --}}
-              {{-- <input type="radio" class="form-control" id="gender" value="{{ old('gender') }}" name="gender"> --}}
             </div>
 
             <div class="mb-3">
