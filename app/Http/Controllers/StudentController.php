@@ -29,4 +29,33 @@ class StudentController extends Controller
         
         return redirect()->route('student.index');
     }
+    
+    public function edit($id) {
+        $student = Student::find($id);
+
+        return view('student.edit', compact('student'));
+    }
+
+    public function update(Request $request, $id) {
+        $student = Student::find($id);
+        
+        $student->update([
+            'nim' => $request->nim,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'gender' => $request->gender,
+            'birth_date' => $request->birth_date,
+        ]);
+        
+        return redirect()->route('student.index');
+    }
+
+    public function delete($id) {
+        $student = Student::find($id);
+
+        $student->delete();
+
+        return redirect()->route('student.index');
+    }
 }
