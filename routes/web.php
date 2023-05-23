@@ -14,9 +14,6 @@ use App\Http\Controllers\StudentController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('student', [StudentController::class, 'index'])->name('student.index');
 
@@ -24,8 +21,8 @@ Route::get('student/create', [StudentController::class, 'create'])->name('studen
 
 Route::post('student/store', [StudentController::class, 'store'])->name('student.store');
 
-Route::get('student/edit/{id}', [StudentController::class, 'edit'])->name('student.edit');
+Route::get('student/update/{id}', [StudentController::class, 'update'])->name('student.update');
 
-Route::patch('student/edit/{id}', [StudentController::class, 'update'])->name('student.update');
+Route::patch('student/update/{id}', [StudentController::class, 'edit'])->name('student.edit');
 
-Route::delete('student/delete/{id}', [StudentController::class, 'destroy'])->name('student.destroy');
+Route::delete('student/delete/{id}', [StudentController::class, 'delete'])->name('student.delete');
