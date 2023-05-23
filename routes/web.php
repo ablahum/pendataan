@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +15,14 @@ use App\Http\Controllers\StudentController;
 */
 
 
-Route::get('student', [StudentController::class, 'index'])->name('student.index');
+Route::get('', [UserController::class, 'index'])->name('user.index');
 
-Route::get('student/create', [StudentController::class, 'create'])->name('student.create');
+Route::get('create', [UserController::class, 'create'])->name('user.create');
 
-Route::post('student/store', [StudentController::class, 'store'])->name('student.store');
+Route::post('store', [UserController::class, 'store'])->name('user.store');
 
-Route::get('student/update/{id}', [StudentController::class, 'update'])->name('student.update');
+Route::get('update/{id}', [UserController::class, 'update'])->name('user.update');
 
-Route::patch('student/update/{id}', [StudentController::class, 'edit'])->name('student.edit');
+Route::patch('update/{id}', [UserController::class, 'edit'])->name('user.edit');
 
-Route::delete('student/delete/{id}', [StudentController::class, 'delete'])->name('student.delete');
+Route::delete('delete/{id}', [UserController::class, 'delete'])->name('user.delete');

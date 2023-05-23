@@ -5,11 +5,11 @@
     <div class="row">
       <div class="col d-flex justify-content-between">
         <div>
-          <h2>Data Mahasiswa</h2>
+          <h2>Data Pengguna</h2>
         </div>
 
         <div>
-          <a href="{{ route('student.create') }}" class="btn btn-success">Tambah Mahasiswa</a>
+          <a href="{{ route('user.create') }}" class="btn btn-success">Tambah Pengguna</a>
         </div>
       </div>
     </div>
@@ -19,7 +19,7 @@
         <thead>
           <tr>
             <th scope='col'>No</th>
-            <th scope='col'>NIM</th>
+            <th scope='col'>NRP</th>
             <th scope='col'>Name</th>
             <th scope='col'>Email</th>
             <th scope='col'>Phone</th>
@@ -31,20 +31,19 @@
 
         <tbody>
           
-          @foreach($students as $student)
+          @foreach($users as $user)
           <tr>
             <th scope='row'>{{ $loop->iteration }}</th>
-            <td>{{ $student->nim }}</td>
-            <td>{{ $student->name }}</td>
-            <td>{{ $student->email }}</td>
-            <td>{{ $student->phone }}</td>
-            <td>{{ $student->gender }}</td>
-            <td>{{ $student->birth_date }}</td>
+            <td>{{ $user->nrp }}</td>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->email }}</td>
+            <td>{{ $user->phone }}</td>
+            <td>{{ $user->gender }}</td>
+            <td>{{ $user->birth_date }}</td>
             <td class='d-flex justify-content-between'>
-              <a href="#" class='btn btn-warning'>Detail</a>
-              <a href="{{ route('student.update', $student->id) }}" class='btn btn-primary mx-2'>Edit</a>
+              <a href="{{ route('user.update', $user->id) }}" class='btn btn-primary mx-2'>Edit</a>
 
-              <form action="{{ route('student.delete', $student->id) }}" method='POST'>
+              <form action="{{ route('user.delete', $user->id) }}" method='POST'>
                 @csrf
                 @method('delete')
 

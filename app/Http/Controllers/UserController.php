@@ -3,23 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Student;
+use App\Models\User;
+// use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Routing\Controller;
 
-class StudentController extends Controller
+class UserController extends Controller
 {
     public function index() {
-        $students = Student::all();
+        $users = User::all();
         
-        return view('student.index', compact('students'));
+        return view('user.index', compact('users'));
     }
 
     public function create() {
-        return view('student.create');
+        return view('user.create');
     }
 
     public function store(Request $request) {
-        Student::create([
-            'nim' => $request->nim,
+        User::create([
+            'nrp' => $request->nrp,
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
@@ -27,20 +29,20 @@ class StudentController extends Controller
             'birth_date' => $request->birth_date,
         ]);
         
-        return redirect()->route('student.index');
+        return redirect()->route('user.index');
     }
     
     public function update($id) {
-        $student = Student::find($id);
+        $user = User::find($id);
 
-        return view('student.edit', compact('student'));
+        return view('user.edit', compact('user'));
     }
 
     public function edit(Request $request, $id) {
-        $student = Student::find($id);
+        $user = User::find($id);
         
-        $student->update([
-            'nim' => $request->nim,
+        $user->update([
+            'nrp' => $request->nrp,
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
@@ -48,14 +50,14 @@ class StudentController extends Controller
             'birth_date' => $request->birth_date,
         ]);
         
-        return redirect()->route('student.index');
+        return redirect()->route('user.index');
     }
 
     public function delete($id) {
-        $student = Student::find($id);
+        $user = User::find($id);
 
-        $student->delete();
+        $user->delete();
 
-        return redirect()->route('student.index');
+        return redirect()->route('user.index');
     }
 }

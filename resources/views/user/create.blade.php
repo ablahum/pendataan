@@ -5,12 +5,12 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
       <div class="card">
         <div class="card-body">
-          <form action="{{ route('student.store') }}" method='POST'>
+          <form action="{{ route('user.store') }}" method='POST'>
             @csrf
             
             <div class="mb-3">
-              <label for="nim" class="form-label">NIM</label>
-              <input type="number" class="form-control" id="nim" value="{{ old('nim') }}" name="nim">
+              <label for="nrp" class="form-label">NRP</label>
+              <input type="number" class="form-control" id="nrp" value="{{ old('nrp') }}" name="nrp">
             </div>
             
             <div class="mb-3">
