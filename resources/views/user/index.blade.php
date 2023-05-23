@@ -2,15 +2,13 @@
 
 @section('content')
   <div class="py-5">
-    <div class="row">
-      <div class="col d-flex justify-content-between">
-        <div>
-          <h2>Data Pengguna</h2>
-        </div>
+    <div class="d-flex justify-content-between mb-4">
+      <div>
+        <h1 class='m-0'>User Data</h1>
+      </div>
 
-        <div>
-          <a href="{{ route('user.create') }}" class="btn btn-success">Tambah Pengguna</a>
-        </div>
+      <div>
+        <a href="{{ route('user.create') }}" class="btn btn-success">Add User +</a>
       </div>
     </div>
 
@@ -30,10 +28,9 @@
         </thead>
 
         <tbody>
-          
           @foreach($users as $user)
           <tr>
-            <th scope='row'>{{ $loop->iteration }}</th>
+            <td>{{ $loop->iteration }}</td>
             <td>{{ $user->nrp }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
@@ -52,7 +49,6 @@
             </td>
           </tr>
           @endforeach
-
         </tbody>
       </table>
     </div>
