@@ -42,9 +42,9 @@
             <td>{{ $student->birth_date }}</td>
             <td class='d-flex justify-content-between'>
               <a href="#" class='btn btn-warning'>Detail</a>
-              <a href="{{ route('student.edit', $student->id) }}" class='btn btn-primary mx-2'>Edit</a>
+              <a href="{{ route('student.update', $student->id) }}" class='btn btn-primary mx-2'>Edit</a>
 
-              <form action="{{ route('student.destroy', $student->id) }}" method='POST'>
+              <form action="{{ route('student.delete', $student->id) }}" method='POST'>
                 @csrf
                 @method('delete')
 

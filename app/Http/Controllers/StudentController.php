@@ -30,13 +30,13 @@ class StudentController extends Controller
         return redirect()->route('student.index');
     }
     
-    public function edit($id) {
+    public function update($id) {
         $student = Student::find($id);
 
         return view('student.edit', compact('student'));
     }
 
-    public function update(Request $request, $id) {
+    public function edit(Request $request, $id) {
         $student = Student::find($id);
         
         $student->update([
@@ -51,7 +51,7 @@ class StudentController extends Controller
         return redirect()->route('student.index');
     }
 
-    public function destroy($id) {
+    public function delete($id) {
         $student = Student::find($id);
 
         $student->delete();
